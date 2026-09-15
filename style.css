@@ -289,3 +289,23 @@ h1, h2, h3, h4, h5, h6 { font-weight: 700; line-height: 1.3; }
     border-color: #0F3B68 !important;
     background: #F0F4F8 !important;
 }
+
+/* V5 Fixes */
+.property-large-card {
+    align-items: stretch !important;
+}
+.plc-gallery {
+    display: flex;
+    flex-direction: column;
+}
+.plc-main-img {
+    flex-grow: 1;
+    object-fit: cover;
+    min-height: 300px;
+}
+.main-nav ul li a, .header-cta a, .corporate-banner a {
+    white-space: nowrap !important;
+}
+.corporate-banner .section-container {
+    gap: 20px;
+}
