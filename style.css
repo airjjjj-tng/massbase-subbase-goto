@@ -369,3 +369,17 @@ body {
 .price-box {
     display: inline-block;
 }
+
+/* Flow steps text wrap fix (override body keep-all) */
+.step-card {
+    word-break: normal;
+    overflow-wrap: break-word;
+}
+.step-card p, .step-card div {
+    word-break: normal;
+    overflow-wrap: break-word;
+}
+.faq-answer {
+    word-break: normal;
+    overflow-wrap: break-word;
+}
