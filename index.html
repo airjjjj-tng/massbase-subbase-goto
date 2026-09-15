@@ -3,8 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MassBASE & SubBASE | 五島市福江島 家具家電付きマンスリーアパートメント</title>
-    <meta name="description" content="長崎県五島市福江島のマンスリーアパートメント「MassBASE（マスベース）」「SubBASE（サブベース）」。敷金礼金0円、光熱費・Wi-Fi込み。長期出張、工事、ワーケーションに最適。">
+    <title>MassBASE & SubBASE | 五島市福江島の家具家電付きマンスリーアパートメント</title>
+    <meta name="description" content="長崎県五島市福江島のマンスリーアパートメント「MassBASE（マスベース）」「SubBASE（サブベース）」。敷金礼金0、光熱費・Wi-Fi込み。長期出張、工事、ビジネス滞在、ワーケーションに最適。">
+    <link rel="canonical" href="https://base-goto.com/">
+    
+    <!-- OGP Tags -->
+    <meta property="og:title" content="MassBASE & SubBASE | 五島市福江島 家具家電付きマンスリーアパートメント">
+    <meta property="og:description" content="長崎県五島市福江島の家具家電付きマンスリーアパートメント。敷金礼金0、出張・ビジネス滞在に最適。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://base-goto.com/">
+    <meta property="og:image" content="https://base-goto.com/assets/images/subbase_exterior_lawn.webp">
+    <meta property="og:site_name" content="MassBASE & SubBASE">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LodgingBusiness",
+      "name": "MassBASE & SubBASE",
+      "image": "https://base-goto.com/assets/images/subbase_exterior_lawn.webp",
+      "url": "https://base-goto.com/",
+      "telephone": "070-4021-4835",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "五島市",
+        "addressRegion": "長崎県",
+        "addressCountry": "JP"
+      },
+      "description": "長崎県五島市福江島のマンスリーアパートメント。家具家電・Wi-Fi完備で出張や工事滞在に最適です。"
+    }
+    </script>
     <link rel="stylesheet" href="style.css">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VSZWEX00SH"></script>
@@ -12,451 +41,180 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-VSZWEX00SH');
     </script>
+    <script src="https://unpkg.com/feather-icons"></script>
 </head>
 <body>
 
-    <!-- Header / Navigation -->
     <header class="site-header">
         <div class="header-container">
             <div class="logo">
                 <a href="#top">
                     <img loading="lazy" src="assets/images/basegoto_logo.webp" alt="BASE GOTO">
                 </a>
-                <span class="logo-text">五島市福江島 家具家電付きマンスリーアパートメント</span>
             </div>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="#properties">物件紹介</a></li>
-                    <li><a href="#comparison">物件比較表</a></li>
-                    <li><a href="#services">充実の無料サービス</a></li>
-                    <li><a href="#simulator">料金シミュレーター</a></li>
-                    <li><a href="#access">立地・アクセス</a></li>
-                    <li><a href="#flow">利用の流れ</a></li>
-                    <li><a href="#faq">よくある質問(Q&A)</a></li>
+                    <li><a href="#properties">施設紹介</a></li>
+                    <li><a href="#comparison">比較</a></li>
+                    <li><a href="#services">サービス</a></li>
+                    <li><a href="#simulator">料金</a></li>
+                    <li><a href="#faq">よくある質問</a></li>
                 </ul>
             </nav>
             <div class="header-cta">
-                <a href="tel:07040214835" class="phone-link">📞 070-4021-4835</a>
-                <a href="#contact" class="btn-primary">✉ WEB予約・お見積り</a>
-            </div>
-            <div class="mobile-menu-btn" id="mobile-menu-btn">
-                <span></span>
-                <span></span>
-                <span></span>
+                <a href="tel:07040214835" class="phone-link"><i data-feather="phone"></i> 070-4021-4835</a>
+                <a href="#contact" class="btn-primary">WEB問い合わせ</a>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="top" class="hero-section" style="background-image: url('assets/images/IMG_20230207_151124578_HDR.webp');">
+    <section id="top" class="hero-section">
+        <div class="hero-bg" style="background-image: url('assets/images/subbase_exterior_lawn.webp');"></div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1>五島市福江島に、<br>もうひとつの拠点を。<br>「MassBASE」＆「SubBASE」</h1>
-            <p class="hero-subtitle">
-                広々空間でハイコスパな「MassBASE（¥69,990/月）」<br>
-                市内に近く専用設備の「SubBASE（¥79,980/月）」<br>
-                長期出張・工事・ワーケーション・移住検討に。カバンひとつで始まる快適な島生活。
+            <h1 class="fade-in-up">
+                五島での長期出張・工事に。<br>「カバン一つで住める」快適な拠点。<br>MassBASE & SubBASE
+            </h1>
+            <p class="hero-subtitle fade-in-up delay-1">
+                敷金・礼金0、家具家電・Wi-Fi・光熱費まで「すべてコミコミ」。<br>
+                大型トラックの駐車や、法人様の複数人・複数室にも完全対応。<br>
+                ビジネスマンのための、無骨でタフなマンスリーアパートメント。
             </p>
             
-            <div class="hero-features">
-                <span>✔️ 敷金・礼金 0円</span>
-                <span>✔️ 光熱費・タオル込</span>
-                <span>✔️ 無料駐車場完備</span>
-                <span>✔️ 法人請求書対応</span>
-            </div>
-
-            <div class="hero-cards">
-                <a href="#massbase" class="hero-card">
-                    <img loading="lazy" src="assets/images/massbase_logo.webp" alt="MassBASE">
-                    <span>詳細を見る</span>
-                </a>
-                <a href="#subbase" class="hero-card">
-                    <img loading="lazy" src="assets/images/subbase_logo.webp" alt="SubBASE">
-                    <span>詳細を見る</span>
-                </a>
+            <div class="hero-features fade-in-up delay-2">
+                <span><i data-feather="check"></i> 敷金・礼金 0円</span>
+                <span><i data-feather="check"></i> 家具家電付き</span>
+                <span><i data-feather="check"></i> 駐車場完備</span>
+                <span><i data-feather="check"></i> 法人対応OK</span>
             </div>
         </div>
     </section>
 
-    <!-- ALL INCLUDED CONCEPT -->
-    <section id="services" class="section-container bg-light">
-        <div class="section-header">
-            <h2>「着替えだけお持ちいただければ、<br>その日から生活できます」</h2>
-            <p>以下のすべてのサービス・設備が月額料金に含まれており、追加料金は一切かかりません。</p>
-        </div>
-        <div class="services-grid">
-            <div class="service-item">
-                <div class="service-icon">⚡</div>
-                <h4>光熱費・Wi-Fi込</h4>
-                <p>電気・ガス・水道・高速光Wi-Fi</p>
-            </div>
-            <div class="service-item">
-                <div class="service-icon">🛁</div>
-                <h4>タオル毎日提供</h4>
-                <p>バスタオル＆フェイスタオル各1枚/日</p>
-            </div>
-            <div class="service-item">
-                <div class="service-icon">🧹</div>
-                <h4>シーツ交換・清掃</h4>
-                <p>週1シーツ交換＆平日居室・共用清掃</p>
-            </div>
-            <div class="service-item">
-                <div class="service-icon">☕</div>
-                <h4>朝食パン・コーヒー</h4>
-                <p>前日夕方に食パン補充・サーバー無料</p>
-            </div>
-            <div class="service-item">
-                <div class="service-icon">🧺</div>
-                <h4>ランドリー・洗剤</h4>
-                <p>洗濯機・乾燥機2台＆洗剤常備</p>
-            </div>
-            <div class="service-item">
-                <div class="service-icon">🅿️</div>
-                <h4>無料駐車場・複合機</h4>
-                <p>敷地内駐車場＆プリンター利用可</p>
+    <section class="section-container intro-section" id="properties">
+        <div class="intro-grid">
+            <div class="intro-text">
+                <h2 class="section-title">ALL INCLUDED</h2>
+                <p class="section-lead">赴任したその日から、<br>すぐに生活が始められます。</p>
+                <p class="section-desc">家具・家電、光熱費、Wi-Fi、さらにタオル・シーツ類まで、すべて料金に含まれています。初期費用を抑えて、ホテルより快適なプライベート空間をご提供します。</p>
             </div>
         </div>
     </section>
 
-    <!-- OUR APARTMENTS -->
-    <section id="properties" class="section-container">
-        <div class="section-header">
-            <h2>2つのマンスリーアパートメント</h2>
-            <p>個室＋広々共用空間で、快適性と利便性を両立したマンスリーアパートメントです。</p>
-        </div>
-
-        <!-- MassBASE -->
-        <div id="massbase" class="property-block">
-            <div class="property-images">
-                <img loading="lazy" src="assets/images/1685862954243.webp" alt="MassBASE Living">
-                <img loading="lazy" src="assets/images/1685862954087.webp" alt="MassBASE Room">
-            </div>
-            <div class="property-details">
-                <img loading="lazy" src="assets/images/massbase_logo.webp" alt="MassBASE Logo" class="prop-logo">
+    <section class="section-container" id="services">
+        <h2 class="section-title center">2つのマンスリーアパートメント</h2>
+        <div class="properties-grid">
+            <div class="property-card">
                 <h3>MassBASE（マスベース）</h3>
-                <p class="address">〒853-0027 長崎県五島市増田町407（福江空港から車で約10分） 目の前が海の開放的な立地。</p>
-                <div class="price-box">30日 ¥69,990<span>（31日以降 ¥2,333/日）</span></div>
-                <p class="desc">の圧倒的ハイコスパを誇り、敷地内には2tトラックや大型車も 完全無料 で駐車可能。釣りが好きな方や長期現場工事の拠点に最適です。</p>
-                <ul class="prop-bullets">
-                    <li>✔️ 無料駐車場完備 (大型車・2tトラックも無料)</li>
-                    <li>✔️ 目の前が海 (仕事帰りの釣りも人気)</li>
-                    <li>✔️ 広々リビング＆キッチン (くつろげる共用空間)</li>
-                    <li>✔️ 複合機＆光Wi-Fi (書類印刷・テレワーク対応)</li>
-                </ul>
-                <div class="prop-actions">
-                    <a href="#contact" class="btn-primary">✉ MassBASEの空室確認・見積</a>
-                    <a href="tel:07040214835" class="btn-secondary">📞 070-4021-4835</a>
-                </div>
+                <p class="address">〒853-0027 長崎県五島市</p>
+                <div class="price-box">30日 69,990円<span>（31日目以降 2,333円/日）</span></div>
+                <p class="desc">広々とした敷地で、2tトラックや大型車の駐車も可能です。</p>
             </div>
-        </div>
-
-        <!-- SubBASE -->
-        <div id="subbase" class="property-block reverse">
-            <div class="property-images">
-                <img loading="lazy" src="assets/images/IMG_20230531_161435398.webp" alt="SubBASE Living">
-                <img loading="lazy" src="assets/images/subbase_exterior_lawn.webp" alt="SubBASE Exterior">
-            </div>
-            <div class="property-details">
-                <img loading="lazy" src="assets/images/subbase_logo.webp" alt="SubBASE Logo" class="prop-logo">
+            <div class="property-card">
                 <h3>SubBASE（サブベース）</h3>
-                <p class="address">長崎県五島市松山町（福江港から車で約5分 / 飲食店・スーパー徒歩圏）</p>
-                <div class="price-box">30日 ¥79,980<span>（31日以降 ¥2,666/日）</span></div>
-                <p class="desc">中心市街地に近く、買い物や飲食の利便性を重視する方に人気。各居室内に 「専用デスク・チェア」「各室専用冷蔵庫」 を完備し、もちろん 複合機＆高速光Wi-Fi も利用可能。</p>
-                <ul class="prop-bullets">
-                    <li>✔️ 各室に専用冷蔵庫完備 (共用大型冷蔵庫も有)</li>
-                    <li>✔️ 専用机・椅子完備 (自室でのPC作業も快適)</li>
-                    <li>✔️ 複合機＆高速光Wi-Fi (SubBASEにも完備)</li>
-                    <li>✔️ 市街地徒歩圏・無料駐車場 (乗用車/軽・貸出自転車有)</li>
-                </ul>
-                <div class="prop-actions">
-                    <a href="#contact" class="btn-primary">✉ SubBASEの空室確認・見積</a>
-                    <a href="tel:07040214835" class="btn-secondary">📞 070-4021-4835</a>
-                </div>
+                <p class="address">〒853-0027 長崎県五島市</p>
+                <div class="price-box">30日 79,980円<span>（31日目以降 2,666円/日）</span></div>
+                <p class="desc">より快適な設備と空間を備えた、プレミアムな滞在拠点。</p>
             </div>
         </div>
     </section>
 
-    <!-- SPECIFICATION -->
-    <section id="comparison" class="section-container bg-light">
-        <div class="section-header">
-            <h2>物件スペック・料金体系比較表</h2>
-            <p>どちらを選ぶべきか迷っている方はこちらの比較表をご参考ください。</p>
-        </div>
-        <div class="table-responsive">
-            <table class="comparison-table">
-                <thead>
-                    <tr>
-                        <th>項目</th>
-                        <th>MassBASE</th>
-                        <th>SubBASE</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>月額料金（30日ご利用）</td>
-                        <td class="highlight-price">¥69,990</td>
-                        <td class="highlight-price">¥79,980</td>
-                    </tr>
-                    <tr>
-                        <td>1日あたり内訳</td>
-                        <td>家賃1,333円 ＋ 共益費500円 ＋ 管理費500円</td>
-                        <td>家賃1,666円 ＋ 共益費500円 ＋ 管理費500円</td>
-                    </tr>
-                    <tr>
-                        <td>31日目以降の日割り単価</td>
-                        <td>＋ ¥2,333 / 1日</td>
-                        <td>＋ ¥2,666 / 1日</td>
-                    </tr>
-                    <tr>
-                        <td>所在地・立地</td>
-                        <td>増田町407（海の前・空港車10分）</td>
-                        <td>松山町（市街地徒歩圏・港車5分）</td>
-                    </tr>
-                    <tr>
-                        <td>部屋数・広さ</td>
-                        <td>全9部屋（6.0帖〜7.5帖）</td>
-                        <td>全5部屋（6帖〜7.5帖）</td>
-                    </tr>
-                    <tr>
-                        <td>居室の冷蔵庫</td>
-                        <td>共用大型冷蔵庫を利用</td>
-                        <td>◎ 共用大型のほか、各部屋に小型専用冷蔵庫完備</td>
-                    </tr>
-                    <tr>
-                        <td>居室のワーク環境</td>
-                        <td>◎ 机・椅子完備</td>
-                        <td>◎ 机・椅子完備</td>
-                    </tr>
-                    <tr>
-                        <td>対応車両・駐車場</td>
-                        <td>◎ 無料（大型車・2tトラックもOK）</td>
-                        <td>◎ 無料（乗用車・軽・宅配小型トラック）</td>
-                    </tr>
-                    <tr>
-                        <td>共用設備</td>
-                        <td colspan="2">両方とも広々リビング、フルキッチン、シャワー2室、トイレ2室、ランドリー洗濯2台乾燥2台、複合機、光Wi-Fi、ウォーターサーバー、朝食パン補充あり。<br>※SubBASEのみ貸出自転車あり</td>
-                    </tr>
-                    <tr>
-                        <td>向いている方</td>
-                        <td>ハイコスパ重視、釣り好き、大型車利用</td>
-                        <td>利便性重視、徒歩で動きたい方</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </section>
-
-    <!-- COST SIMULATOR -->
-    <section id="simulator" class="section-container">
-        <div class="section-header">
-            <h2>概算料金シミュレーター</h2>
-        </div>
-        <div class="simulator-box">
-            <div class="sim-options">
-                <label class="sim-radio">
-                    <input type="radio" name="sim-prop" value="massbase" checked>
-                    <span class="sim-label"><img loading="lazy" src="assets/images/massbase_logo.webp" alt="MassBASE"></span>
-                </label>
-                <label class="sim-radio">
-                    <input type="radio" name="sim-prop" value="subbase">
-                    <span class="sim-label"><img loading="lazy" src="assets/images/subbase_logo.webp" alt="SubBASE"></span>
-                </label>
-            </div>
-            
-            <div class="sim-slider-container">
-                <label for="sim-days">予定滞在日数: <span id="sim-days-display">30</span>日</label>
-                <input type="range" id="sim-days" min="1" max="90" value="30">
-                <div class="sim-quick-btns">
-                    <button type="button" data-days="7">7日</button>
-                    <button type="button" data-days="14">14日</button>
-                    <button type="button" data-days="30">30日</button>
-                    <button type="button" data-days="45">45日</button>
-                    <button type="button" data-days="60">60日</button>
-                    <button type="button" data-days="90">90日</button>
-                </div>
-            </div>
-
-            <div class="sim-result">
-                <h3>ESTIMATED TOTAL</h3>
-                <div class="sim-total" id="sim-total">¥69,990</div>
-                <p class="sim-note">※30日未満の滞在でも、定期借家契約の性質上30日分の基本料金となります。</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- LOCATION & ACCESS -->
-    <section id="access" class="section-container bg-light">
-        <div class="section-header">
-            <h2>福江島の主要スポットへスムーズな立地</h2>
-        </div>
-        <div class="access-grid">
-            <div class="access-item">
-                <h4>⛴ 福江港ターミナル</h4>
-                <p>SubBASE: 車5分 / MassBASE: 車20分</p>
-            </div>
-            <div class="access-item">
-                <h4>✈ 五島つばき空港</h4>
-                <p>両施設とも車で約 10 分</p>
-            </div>
-            <div class="access-item">
-                <h4>🏥 長崎県五島中央病院</h4>
-                <p>両施設ともほぼ中間の距離</p>
-            </div>
-            <div class="access-item">
-                <h4>🛒 スーパー・ドラッグストア</h4>
-                <p>車で約 3〜5 分</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOR BUSINESS -->
-    <section class="section-container">
-        <div class="section-header">
-            <h2>五島市福江島での出張・工事・プロジェクト<br>法人ご担当者様向けサポート（社宅代行対応）</h2>
-        </div>
-        <div class="business-content">
-            <ul class="business-features">
-                <li>✔️ 適格請求書・領収書対応</li>
-                <li>✔️ 複数室・一棟貸切・社宅代行対応</li>
-                <li>✔️ 2tトラック・作業車無料駐車可能（MassBASE）</li>
-            </ul>
-            <div class="prop-actions center">
-                <a href="#contact" class="btn-primary">✉ 法人様専用お見積り・ご相談</a>
-                <a href="tel:07040214835" class="btn-secondary">📞 お電話でのご相談: 070-4021-4835</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- EASY STEPS -->
-    <section id="flow" class="section-container bg-light">
-        <div class="section-header">
-            <h2>ご契約・ご入居までの流れ</h2>
-        </div>
-        <div class="steps-container">
-            <div class="step-item">
-                <div class="step-num">1</div>
-                <h4>お問い合わせ・空室確認</h4>
-                <p>お電話またはWEBフォームより</p>
-            </div>
-            <div class="step-item">
-                <div class="step-num">2</div>
-                <h4>お見積り・契約ご案内</h4>
-                <p>提携不動産「くらす企画」より連絡</p>
-            </div>
-            <div class="step-item">
-                <div class="step-num">3</div>
-                <h4>書類手続き・お支払い</h4>
-                <p>初期費用は仲介手数料11,000円のみ</p>
-            </div>
-            <div class="step-item">
-                <div class="step-num">4</div>
-                <h4>カードキー受取・ご入居</h4>
-                <p>到着時間に合わせてお出迎えまたは暗証番号</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq" class="section-container">
-        <div class="section-header">
-            <h2>よくあるご質問（Q&A）</h2>
+    <section id="faq" class="section-container bg-light">
+        <div class="section-header center">
+            <h2 class="section-title">FAQ</h2>
+            <p class="section-lead">よくある質問</p>
         </div>
         <div class="faq-container">
             <div class="faq-item">
-                <div class="faq-question">Q: 空いているお部屋はありますか？</div>
-                <div class="faq-answer">A: お電話（070-4021-4835）またはWEBフォームよりご連絡ください。最新の空室状況をお伝えいたします。</div>
+                <div class="faq-question">30日未満の利用は可能ですか？<i data-feather="plus"></i></div>
+                <div class="faq-answer"><div class="faq-answer-inner">ご利用可能ですが、契約上、最低利用期間の30日分の料金が発生いたしますのでご了承ください。</div></div>
             </div>
             <div class="faq-item">
-                <div class="faq-question">Q: 30日未満の利用は可能ですか？</div>
-                <div class="faq-answer">A: ご利用可能ですが、契約上最低利用期間の30日分の料金が発生いたしますのでご了承ください。</div>
+                <div class="faq-question">法人での一括契約・請求書払いはできますか？<i data-feather="plus"></i></div>
+                <div class="faq-answer"><div class="faq-answer-inner">はい、可能です。会社代行サービス等も対応しておりますのでご相談ください。</div></div>
             </div>
             <div class="faq-item">
-                <div class="faq-question">Q: 法人での一括契約や請求書払いはできますか？</div>
-                <div class="faq-answer">A: はい、可能です。社宅代行サービス等も対応しておりますのでご相談ください。</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">Q: 駐車場に2tトラックは停められますか？</div>
-                <div class="faq-answer">A: MassBASEであれば、敷地が広いため2tトラックや大型車も無料で駐車可能です。</div>
+                <div class="faq-question">駐車場に2tトラックは停められますか？<i data-feather="plus"></i></div>
+                <div class="faq-answer"><div class="faq-answer-inner">MassBASEであれば、敷地が広いため2tトラックや大型車も無料で駐車可能です。</div></div>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER / CONTACT FORM -->
     <footer id="contact" class="site-footer">
-        <div class="section-container">
-            <div class="section-header text-white">
-                <h2>お問い合わせ</h2>
-                <p>お急ぎの方はお電話（070-4021-4835）でご連絡ください。</p>
-                <h5>またはWEBフォームから送信</h5>
+        <div class="footer-top">
+            <div class="section-container">
+                <div class="section-header center">
+                    <h2 class="section-title">CONTACT</h2>
+                    <p class="section-lead">空室確認・お見積り・お問い合わせ</p>
+                    <p class="section-desc" style="margin-top: 1rem;">お急ぎの方はお電話（<strong>070-4021-4835</strong>）にてご連絡ください。<br>または、以下のWEBフォームより送信してください。</p>
+                </div>
+                
+                <div class="form-wrapper">
+                    <form name="contact" method="POST" data-netlify="true" action="/thank-you" class="modern-form">
+                        <div class="form-row">
+                            <div class="form-group half">
+                                <label>ご希望の物件</label>
+                                <select name="property">
+                                    <option value="未定">未定・相談したい</option>
+                                    <option value="MassBASE">MassBASE</option>
+                                    <option value="SubBASE">SubBASE</option>
+                                </select>
+                            </div>
+                            <div class="form-group half">
+                                <label>利用区分</label>
+                                <select name="user-type">
+                                    <option value="法人">法人</option>
+                                    <option value="個人">個人</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>お名前 <span class="req">必須</span></label>
+                            <input type="text" name="name" required placeholder="山田 太郎">
+                        </div>
+                        <div class="form-group">
+                            <label>会社名（法人の場合）</label>
+                            <input type="text" name="company" placeholder="株式会社 〇〇">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group half">
+                                <label>電話番号 <span class="req">必須</span></label>
+                                <input type="tel" name="phone" required placeholder="090-1234-5678">
+                            </div>
+                            <div class="form-group half">
+                                <label>メールアドレス <span class="req">必須</span></label>
+                                <input type="email" name="email" required placeholder="info@example.com">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>ご相談・ご要望</label>
+                            <textarea name="message" rows="4" placeholder="ご質問やご要望があればご記入ください"></textarea>
+                        </div>
+                        <div class="form-submit">
+                            <button type="submit" class="btn-submit">この内容で問い合わせをする</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="sister-facility-card">
+                    <div class="sister-tag">SISTER FACILITY | 姉妹施設</div>
+                    <h3>五島市吉田町のビジネス・長期滞在拠点<br>「Guest House ASUKA（アスカ）」</h3>
+                    <a href="https://asuka-goto.com/" target="_blank" rel="noopener noreferrer" class="sister-btn">
+                        Guest House ASUKA 公式サイト <i data-feather="external-link"></i>
+                    </a>
+                </div>
             </div>
-            <div class="form-container">
-                <form name="contact" method="POST" data-netlify="true" action="/thank-you">
-                    <div class="form-group">
-                        <label>ご希望の物件</label>
-                        <select name="property">
-                            <option value="未定">未定・相談したい</option>
-                            <option value="MassBASE">MassBASE</option>
-                            <option value="SubBASE">SubBASE</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>利用区分</label>
-                        <select name="user-type">
-                            <option value="法人">法人</option>
-                            <option value="個人">個人</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>お名前 <span class="req">必須</span></label>
-                        <input type="text" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label>会社名（法人の場合）</label>
-                        <input type="text" name="company">
-                    </div>
-                    <div class="form-group">
-                        <label>電話番号 <span class="req">必須</span></label>
-                        <input type="tel" name="phone" required>
-                    </div>
-                    <div class="form-group">
-                        <label>メールアドレス <span class="req">必須</span></label>
-                        <input type="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label>利用開始予定日</label>
-                        <input type="date" name="start-date">
-                    </div>
-                    <div class="form-group">
-                        <label>予定滞在期間</label>
-                        <select name="duration">
-                            <option value="1ヶ月">1ヶ月</option>
-                            <option value="2ヶ月">2ヶ月</option>
-                            <option value="3ヶ月">3ヶ月</option>
-                            <option value="半年">半年</option>
-                            <option value="1年以上">1年以上</option>
-                            <option value="未定">未定</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>利用人数・部屋数</label>
-                        <input type="text" name="rooms" placeholder="例：2名（2部屋）">
-                    </div>
-                    <div class="form-group">
-                        <label>ご相談・ご要望</label>
-                        <textarea name="message" rows="5"></textarea>
-                    </div>
-                    <button type="submit" class="btn-submit">この内容で問い合わせをする</button>
-                </form>
-            </div>
-            <div class="footer-bottom">
-                &copy; 2026 BASE GOTO (MassBASE & SubBASE). All Rights Reserved.
-            </div>
+        </div>
+        <div class="footer-bottom">
+            <img loading="lazy" src="assets/images/basegoto_logo.webp" alt="BASE GOTO" class="footer-logo">
+            <p>&copy; 2026 BASE GOTO (MassBASE & SubBASE). All Rights Reserved.</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        feather.replace();
+    </script>
 </body>
 </html>
