@@ -1,116 +1,79 @@
-document.addEventListener('DOMContentLoaded', () => {
+
+// Data
+const faqData = [{"category": "payment", "q": "1ヶ月の料金はいくらですか？", "a": "お1人・1部屋あたりの料金です。<br>| 施設 | 内訳（1日あたり） | 30日ご利用の場合 |<br>|---|---|---|<br>| **MassBASE**（増田町） | 家賃1,333円＋共益費500円＋管理費500円 | **69,990円** |<br>| **SubBASE**（松山町） | 家賃1,666円＋共益費500円＋管理費500円 | **79,980円** |<br>- SubBASEはMassBASEより月額1万円ほど高くなります。立地（中心市街地に近い）と、**各部屋に冷蔵庫がある**などの設備差によるものです。"}, {"category": "payment", "q": "初期費用（敷金・礼金・保証金）はかかりますか？", "a": "**敷金・礼金・保証金・退去費用は一切いただいておりません。保証人も不要です。**<br>ただし賃貸借契約となるため、**不動産仲介業者への仲介手数料 11,000円**が最初の1回だけ必要です。"}, {"category": "payment", "q": "光熱費や備品は別料金ですか？", "a": "**すべて込み**です。追加でいただく費用はありません。<br>- 電気・ガス・水道・**Wi-Fi**<br>- 家具・家電一式（ベッド、テレビ、机、収納 ほか）<br>- 寝具・リネン一式（**シーツ交換 週1回**）<br>- **バスタオル／フェイスタオル 1日1枚ずつ**<br>- 洗濯用洗剤、ウォーターサーバー、インスタントコーヒー・お茶<br>- 居室の簡易清掃（平日）、共用部の清掃（平日毎朝）<br>- **駐車場代**<br>> 「**着替えだけお持ちいただければ、その日から生活できます**」というのが当施設のコンセプトです。"}, {"category": "payment", "q": "1ヶ月未満（2週間だけ等）でも借りられますか？", "a": "ご滞在は何日でも構いませんが、**料金は最低30日分**をいただきます。<br>- 賃貸借契約は法律上**30日未満で結ぶことができず**、30日未満は「宿泊」の扱いになるためです（近年ウィークリーマンションが少ないのはこの理由です）。<br>- 例：実際は25日のご利用でも、初月は69,990円（MassBASE）となります。"}, {"category": "payment", "q": "30日を超えた場合はどうなりますか？", "a": "**1ヶ月更新・前払い**で、**31日目からは1日単位の日割り計算**になります。<br>| 施設 | 最初の30日 | 31日目以降 |<br>|---|---|---|<br>| **MassBASE** | 69,990円 | **2,333円／1日** |<br>| **SubBASE** | 79,980円 | **2,666円／1日** |<br>**【例】MassBASEを45日間ご利用の場合**<br>69,990円（30日分）＋ 2,333円 × 15日（31〜45日目）＝ **104,985円**<br>- 途中でご退去された場合は、**前払い分のうちご利用のなかった日数を日割りで返金**いたします。"}, {"category": "payment", "q": "支払い方法は？ 請求書払いはできますか？", "a": "**現金・クレジットカード・請求書払い（法人可）**いずれも対応しています。事前に御見積書・御請求書を発行いたします。<br>※仲介手数料11,000円は不動産仲介業者へ、賃料は有限会社セイコーへのお支払いとなります。"}, {"category": "payment", "q": "見積書はもらえますか？", "a": "可能です。会社名（宛名）・ご利用期間・部屋数をお知らせください。備考欄に含まれるサービス内容も明記いたします。"}, {"category": "contract", "q": "契約はどのような流れですか？", "a": "**当社と直接ではなく、提携の不動産仲介業者を介した賃貸借契約**になります。<br>1. お電話・メール・HPフォームでお問い合わせ（**空室確認**）<br>2. 必要に応じて**御見積書**をお送りします<br>3. ご契約希望のご連絡をいただく<br>4. 提携不動産仲介業者「**くらす企画**」（担当：斎藤）からお客様へお電話<br>5. 書類のやり取り（メール／郵送）→ 契約成立<br>6. ご入居"}, {"category": "contract", "q": "契約にどれくらい時間がかかりますか？急いでいます。", "a": "書類の往復に**2週間程度**みていただくと安心です。<br>ただし**お急ぎの場合は、ご入居当日に現地で書類をご記入いただく対応も可能**です。実際に「来週から入りたい」というお客様にも対応した実績があります。"}, {"category": "contract", "q": "法人契約・社宅代行業者経由でも大丈夫ですか？", "a": "問題ありません。**ご利用の大半が法人のお客様**です。社宅代行業者（スターツ様など）を挟んだご契約も受け付けております。"}, {"category": "contract", "q": "何ヶ月前から予約できますか？", "a": "**3ヶ月前から**承っております。1ヶ月ごとの自動更新でご契約いただいている関係上、それより先のお部屋は確定できません。"}, {"category": "contract", "q": "延長はできますか？", "a": "可能です。**お早めにご相談いただければ優先的にお部屋を確保**いたします。<br>他のお客様からお問い合わせがあった際は、まず現入居者様に延長のご予定を確認したうえで調整いたします。"}, {"category": "contract", "q": "解約（退去）はいつまでに伝えればよいですか？", "a": "**できれば2週間前まで**にご連絡ください（1ヶ月前だとより確実です）。"}, {"category": "contract", "q": "途中で利用する人が変わっても大丈夫ですか？", "a": "可能です。契約はご契約者様のままで、**交代される方のお名前とご連絡先を当社にお知らせいただければ**ご利用いただけます。<br>（例：最初の2週間はAさん、残り2週間はBさん）"}, {"category": "facility", "q": "どんな建物ですか？ アパートですか？", "a": "**旅館をフルリノベーションした個室型のマンスリーアパートメント**です。<br>「アパートの1室を借りる」のではなく、**個室＋共用スペース**という構成（シェアハウスに近いイメージ）です。<br>- **個室**：カードキーで施錠できます<br>- **共用**：リビング／キッチン／シャワー／トイレ／洗面所／ランドリー"}, {"category": "facility", "q": "部屋の広さは？ 何部屋ありますか？", "a": "<br>| 施設 | 部屋数 | 広さ |<br>|---|---|---|<br>| **MassBASE** | 9部屋 | 101:6.9帖 / 102:6.9帖 / 103:6.3帖 / 201:6帖 / 202:6帖 / 203:7.5帖 / 204:6帖 / 205:6帖 / 206:6帖 |<br>| **SubBASE** | 5部屋 | 6帖前後（部屋ごとに広さが異なります） |"}, {"category": "facility", "q": "部屋には何がありますか？", "a": "ベッド、テレビ、机（1人用）、シェルフ、物干し。<br>**SubBASEは各部屋に小型冷蔵庫**（ビジネスホテルにあるタイプ）を設置しています。MassBASEは共用の冷蔵庫をご利用いただきます。"}, {"category": "facility", "q": "お風呂はありますか？", "a": "**浴槽（お風呂）はございません。シャワーブースを各施設2箇所ずつ**ご用意しています。脱衣所とシャワーが1セットになっています。"}, {"category": "facility", "q": "トイレ・キッチン・洗濯機は共用ですか？", "a": "はい、共用です。<br>- トイレ：1階・2階それぞれに大便器1・小便器1（いずれも個室）<br>- 洗面所：2箇所<br>- ランドリー：洗濯機2台・乾燥機2台（洗剤は当社でご用意）<br>- キッチン・リビング：ご自由にお使いいただけます"}, {"category": "facility", "q": "プライバシーは確保されますか？", "a": "各居室は施錠できる個室ですが、**建物が木造のため、深夜の話し声などが隣室に聞こえる可能性**がございます。あらかじめご了承ください。"}, {"category": "facility", "q": "食事は付いていますか？", "a": "お食事の提供はございません。<br>ただし**翌朝召し上がっていただけるよう、前日の夕方までに食パンをブレッドケースにご用意**しています。コーヒー・お茶もご自由にどうぞ。"}, {"category": "facility", "q": "掃除はしてもらえますか？", "a": "**土日祝を除く平日**に、居室の簡易清掃（掃除機がけ）と共用部の清掃を行います。シーツ交換は週1回です。<br>※夜勤明けなどでお休みの際は、お声がけいただければ清掃を見送ります。"}, {"category": "facility", "q": "2名で1部屋を使えますか？", "a": "**原則としてお1人様1部屋（定員1名）**でご案内しております。<br>シングルベッド1台を備え付けた1名様用のお部屋のため、2名様ですと手狭になります。<br>**ご夫婦・ご家族（親子）の場合のみ**、同室でのご利用を承っております。<br>- **家賃は追加不要**、**共益費・管理費のみお2人目分**を頂戴します<br>- 2台目はエキストラベッドまたはお布団での対応となります<br>**【例】ご夫婦2名で1部屋を30日間ご利用（SubBASE）**<br>| | お1人目 | お2人目 |<br>|---|---|---|<br>| 家賃（1,666円/日×30日） | 49,980円 | ―（不要） |<br>| 共益費（500円/日×30日） | 15,000円 | 15,000円 |<br>| 管理費（500円/日×30日） | 15,000円 | 15,000円 |<br>| **合計** | **79,980円** | **30,000円** |<br>→ ご夫婦2名・30日間の合計：**109,980円**"}, {"category": "facility", "q": "男女が同じ施設に入居することはありますか？", "a": "ございます。共用部（シャワー・トイレ）は男女別ではなく2箇所ずつのご用意です。<br>**女性のお客様がご入居される場合は、事前に必ずご案内**し、ご了承をいただいたうえで受け入れております。逆に、先に女性が入居されている場合は、後から男性のご予約をお断りする、または別施設をご案内する場合がございます。"}, {"category": "facility", "q": "団体で借りられますか？", "a": "可能です。MassBASEは9部屋、SubBASEは5部屋ございます。<br>**人数が多い場合は1棟貸切**でのご提供も承っております。<br>※部屋数が足りない場合は、当社運営の**ゲストハウスASUKA**（吉田町・個室9部屋）の御案内も可能です。"}, {"category": "facility", "q": "駐車場はありますか？ 料金は？", "a": "**無料**です。追加費用はいただきません。<br>- **MassBASE**：建物北側に隣接する敷地。**大型車・トラックも駐車可能**です。<br>- **SubBASE**：施設前に乗用車2台／軽自動車3台分＋別途契約駐車場3台分。"}, {"category": "facility", "q": "2トントラックやユニック車は停められますか？", "a": "<br>- **MassBASE**：問題なく駐車いただけます。<br>- **SubBASE**：**進入路が狭く、長い車両は入れません**（宅配便の小型トラック程度が限界です）。大型車でお越しの場合はMassBASEをおすすめします。"}, {"category": "facility", "q": "自転車の持ち込み・駐輪場は？", "a": "専用の駐輪場はございませんが、駐車場スペースに駐輪いただけます。**屋根がないため雨に濡れてしまいます**（軒下に寄せてお停めの方もいらっしゃいます）。<br>※SubBASEには貸出用の自転車もございます。"}, {"category": "facility", "q": "場所はどこですか？ 現場・病院から近いですか？", "a": "<br>|        | MassBASE                     | SubBASE                 |<br>| ------ | ---------------------------- | ----------------------- |<br>| 住所     | 〒853-0027 長崎県五島市**増田町407**   | 長崎県五島市**松山町**           |<br>| 立地     | 中心市街地から車で約10分。**目の前が海**       | 中心市街地まで**徒歩圏**。買い物・飲食店が近い |<br>| 五島中央病院 | 両施設ともほぼ中間の距離                 | 同左                       |<br>| 向いている方 | **釣りが趣味の方**、海の近くで過ごしたい方、大きな車をお使いの方 | **買い物・飲食の利便性を重視する方**、徒歩で動きたい方 |<br>- 福江空港から車で約10分。<br>- 福江港からMassBASEは車で約20分、SubBASEは車で約5分。<br>- **島は車で1時間ほどで一周**できますので、島内どの現場でも通勤に支障はありません。<br>- コンビニまで車で5〜10分。**島内では車が必須**です。"}, {"category": "facility", "q": "地図で検索しても出てきません。", "a": "**アルファベット表記で「MassBASE」「SUBBASE」**とご入力ください。カタカナ（サブベース等）では検索にヒットしない場合があります。Googleマップでの検索を推奨しております。<br>> ⚠️ **要対応**：この問い合わせは実際に発生しています。HPに**Googleマップ埋め込み**と**住所のコピーボタン**を設置すべき項目です。"}, {"category": "facility", "q": "到着が夜遅く／到着時間が読めません。", "a": "問題ございません。何時でも対応いたします。<br>- 到着30分ほど前にお電話をいただければ、スタッフが現地でお待ちします。<br>- 深夜到着・スタッフ不在の場合は、**玄関の暗証番号をショートメールでお送りし、お部屋にカードキーを置いておく**対応も可能です。"}, {"category": "facility", "q": "鍵はどうなっていますか？", "a": "玄関・居室ともに**カードキー**です。暗証番号での解錠にも対応しています。<br>カードを部屋に置いたまま出てしまった場合も、**お電話いただければ遠隔で解錠**いたします。"}, {"category": "facility", "q": "退去時の鍵の返却は？", "a": "**カードキーをお部屋のテーブルの上に置いてそのままご退出**ください。立ち会いは不要です。"}, {"category": "facility", "q": "荷物を先に送っておけますか？", "a": "可能です。ご入居前に届いた荷物はスタッフがお預かりし、お部屋に置いておきます。"}, {"category": "facility", "q": "釣り道具のレンタルはありますか？", "a": "常備はしておりませんが、**ご要望をいただければご用意**いたします。MassBASEは目の前が海で、お仕事帰りにすぐ釣りに行ける立地です。"}, {"category": "facility", "q": "住民票は移せますか？", "a": "可能です。実際に住所を移されたお客様がいらっしゃいます。<br>- MassBASE：長崎県五島市増田町407 ＋ 部屋番号"}, {"category": "facility", "q": "何かトラブルがあったときは？", "a": "24時間お電話で対応いたします（070-4021-4835）。鍵の不具合、設備の故障などは当社スタッフがすぐに伺います。"}, {"category": "facility", "q": "いつ頃が混みますか？", "a": "**島内の公共工事が重なる時期は満室になりやすい**傾向があります。近年は6月以降に問い合わせが集中しています。お早めのご相談をおすすめします。<br>| 項目 | 内容 |<br>|---|---|<br>| 運営会社 | 有限会社セイコー |<br>| 担当 | 土岐 達也 |<br>| 電話 | 070-4021-4835 |<br>| メール | info@base-goto.com |<br>| 提携不動産仲介 | くらす企画（担当：斎藤） |<br>掲載方針として確定した項目。**今後の電話・メール対応もこの内容に統一**してください。<br>- [x] **2名利用の可否** → **ご夫婦・ご家族（親子）のみ承る**。それ以外の2名利用はお断り。（Q4-1）<br>※家賃は追加不要、共益費・管理費のみ2人目分を頂戴する<br>- [x] **SubBASEの月額表記** → **79,980円**（30日）に統一。「79,990円」は誤りとして今後使用しない。<br>- [x] **MassBASEの料金表記** → **69,990円／30日**、**31日目からは2,333円／1日**の日割り。（Q1-5）<br>- [x] **1泊5,000円の短期対応** → **HPには載せない**。個別対応の例外運用として非公開のまま維持。<br>- [x] **ゲストハウスASUKA** → 満室時の受け皿として**Q&A内で案内可**。（Q4-3）<br>- [x] **空室状況の確認方法** → **電話（070-4021-4835）または問い合わせフォーム**へ誘導する。<br>※空室カレンダー等の自動表示は今回は導入しない<br>1. **Q&Aは「料金」「契約」「設備」「アクセス」「入退去」のタブ／アコーディオン形式**に分ける（全部縦に並べると読まれない）<br>2. **各Q&AにFAQPage構造化データ（JSON-LD）を実装** → Google検索のリッチリザルト＋AI検索での引用対象になる。[[【進行中】MassBASE／SubBASE _改善ロードマップ_2026-08-16]] で他ページのJSON-LD対応は完了済みのため、同じ手順で追加可能<br>3. **「30日未満でも30日分」「仲介手数料11,000円」は問い合わせ前に必ず伝わる位置**へ。ここが後から発覚すると成約率が落ちる<br>4. **料金表は税込／1日単価／30日合計を1つの表**にまとめる<br>5. MassBASE と SubBASE の**比較表**をQ&Aとは別に独立配置（どちらを選ぶかで迷う問い合わせが多い）<br>6. **最頻出の「空いていますか？」は電話・フォーム誘導で受ける方針**のため、**電話番号とお問い合わせボタンを全ページのヘッダー／フッターに常時表示**する。Q&A内だけに置くと見落とされる"}];
+
+// Init FAQ
+const faqContainer = document.getElementById('faq-content-container');
+const faqTabs = document.querySelectorAll('.faq-tab');
+
+function renderFAQ(filter = 'all') {
+    faqContainer.innerHTML = '';
+    const filtered = filter === 'all' ? faqData : faqData.filter(item => item.category === filter);
     
-    // --- Header Scroll Effect ---
-    const header = document.getElementById('site-header');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
+    filtered.forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'faq-item';
+        div.innerHTML = `
+            <div class="faq-question">${item.q} <i data-feather="plus"></i></div>
+            <div class="faq-answer"><div class="faq-answer-inner" style="padding-top:16px;">${item.a}</div></div>
+        `;
+        faqContainer.appendChild(div);
     });
-
-    // --- FAQ Accordion ---
-    const faqItems = document.querySelectorAll('.faq-item');
-    faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
-        const answer = item.querySelector('.faq-answer');
-        
-        question.addEventListener('click', () => {
-            const isOpen = item.classList.contains('active');
-            
-            // Close all
-            faqItems.forEach(otherItem => {
-                otherItem.classList.remove('active');
-                otherItem.querySelector('.faq-answer').style.maxHeight = null;
-            });
-            
-            // Open clicked if it wasn't open
-            if (!isOpen) {
-                item.classList.add('active');
-                answer.style.maxHeight = answer.scrollHeight + "px";
-            }
-        });
-    });
-
-    // --- Simulator Logic ---
-    const simRadios = document.querySelectorAll('input[name="sim-prop"]');
-    const simSlider = document.getElementById('sim-days');
-    const simDaysDisplay = document.getElementById('sim-days-display');
-    const simTotal = document.getElementById('sim-total');
-    const quickBtns = document.querySelectorAll('.sim-quick-btns button');
-
-    const rates = {
-        massbase: { base30: 69990, dailyOver30: 2333 },
-        subbase: { base30: 79980, dailyOver30: 2666 }
-    };
-
-    function calculateTotal() {
-        if(!simSlider) return;
-        let selectedProp = 'massbase';
-        simRadios.forEach(r => { if(r.checked) selectedProp = r.value; });
-        
-        let days = parseInt(simSlider.value);
-        simDaysDisplay.textContent = days;
-
-        const rate = rates[selectedProp];
-        let total = 0;
-
-        if (days <= 30) {
-            total = rate.base30;
-        } else {
-            total = rate.base30 + (rate.dailyOver30 * (days - 30));
-        }
-
-        simTotal.textContent = '¥' + total.toLocaleString();
-    }
-
-    if(simRadios.length > 0) {
-        simRadios.forEach(r => r.addEventListener('change', calculateTotal));
-        simSlider.addEventListener('input', calculateTotal);
-        
-        quickBtns.forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                simSlider.value = e.target.getAttribute('data-days');
-                calculateTotal();
-            });
-        });
-        calculateTotal();
-    }
-
-    // --- Smooth Scrolling ---
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            if(targetId === '#') return;
-            const targetEl = document.querySelector(targetId);
-            if(targetEl) {
-                const headerOffset = 80;
-                const elementPosition = targetEl.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-  
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: "smooth"
-                });
-
-                // Close mobile menu if open
-                if (mainNav.classList.contains('active')) {
-                    mainNav.classList.remove('active');
-                }
-            }
-        });
-    });
-
-    // --- Mobile Menu Toggle ---
-    const mobileBtn = document.getElementById('mobile-menu-btn');
-    const mainNav = document.querySelector('.main-nav');
     
-    if (mobileBtn) {
-        mobileBtn.addEventListener('click', () => {
-            mainNav.classList.toggle('active');
-            header.classList.add('scrolled'); // Force solid bg when menu opens
+    feather.replace();
+    
+    // Attach events
+    document.querySelectorAll('.faq-question').forEach(q => {
+        q.addEventListener('click', () => {
+            const parent = q.parentElement;
+            parent.classList.toggle('active');
         });
-    }
+    });
+}
+
+// Tab Events
+faqTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        faqTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        renderFAQ(tab.dataset.target);
+    });
 });
+
+// Initial render
+document.addEventListener('DOMContentLoaded', () => {
+    renderFAQ('all');
+});
+
+// Image Gallery
+function changeImage(thumb, propertyIndex) {
+    const cards = document.querySelectorAll('.property-large-card');
+    const mainImg = cards[propertyIndex].querySelector('.plc-main-img');
+    mainImg.src = thumb.src;
+}
+
+// Simulator
+const simProperty = document.getElementById('sim-property');
+const simDays = document.getElementById('sim-days');
+const simTotal = document.getElementById('sim-total');
+
+function calculatePrice() {
+    const isMass = simProperty.value === 'mass';
+    let days = parseInt(simDays.value) || 0;
+    if (days < 30) days = 30; // min 30 days
+    
+    const basePrice = isMass ? 69990 : 79980;
+    const dailyPrice = isMass ? 2333 : 2666;
+    
+    let total = basePrice;
+    if (days > 30) {
+        total += (days - 30) * dailyPrice;
+    }
+    
+    simTotal.innerText = total.toLocaleString();
+}
+
+if (simProperty && simDays) {
+    simProperty.addEventListener('change', calculatePrice);
+    simDays.addEventListener('input', calculatePrice);
+}
