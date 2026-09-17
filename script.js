@@ -6,13 +6,14 @@ const faqData = [{"category": "top5", "q": "<span class='faq-top-badge'>TOP 1</s
 const faqContainer = document.getElementById('faq-content-container');
 const faqTabs = document.querySelectorAll('.faq-tab');
 
-function renderFAQ(filter) {
+function initFAQs() {
+    // Render ALL FAQs once on load for SEO (DOM presence)
     faqContainer.innerHTML = '';
-    const filtered = faqData.filter(item => item.category === filter);
-    
-    filtered.forEach(item => {
+    faqData.forEach(item => {
         const div = document.createElement('div');
         div.className = 'faq-item';
+        div.dataset.category = item.category; // Important for filtering
+        div.style.display = 'none'; // hide by default
         div.innerHTML = `
             <div class="faq-question">${item.q} <i data-feather="chevron-down"></i></div>
             <div class="faq-answer"><div class="faq-answer-inner" style="padding: 16px 0 24px; line-height: 1.8; color: #444;">${item.a}</div></div>
@@ -36,13 +37,33 @@ function renderFAQ(filter) {
     });
 }
 
+function filterFAQ(filter) {
+    document.querySelectorAll('.faq-item').forEach(item => {
+        if (item.dataset.category === filter) {
+            item.style.display = 'block';
+        } else {
+            item.style.display = 'none';
+        }
+    });
+}
+
 // Tab Events
 faqTabs.forEach(tab => {
-    tab.addEventListener('click', () => {
+    tab.addEventListener('click', (e) => {
+        const btn = e.currentTarget;
         faqTabs.forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-        renderFAQ(tab.dataset.target);
+        btn.classList.add('active');
+        filterFAQ(btn.dataset.target);
     });
+});
+
+// Initial render
+document.addEventListener('DOMContentLoaded', () => {
+    initFAQs();
+    if(faqTabs.length > 0) {
+        faqTabs[0].classList.add('active');
+        filterFAQ(faqTabs[0].dataset.target);
+    }
 });
 
 // Initial render
