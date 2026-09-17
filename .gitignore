@@ -1,6 +1,5 @@
 .DS_Store
 node_modules/
-image/
 optimize_images.py
 
 # Local Netlify folder
