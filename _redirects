@@ -1,0 +1,7 @@
+# 旧Wixサイト時代のURLをトップへ転送（301）
+/subbase  /  301
+/subbase/  /  301
+/massbase  /  301
+/massbase/  /  301
+/contact  /  301
+/contact/  /  301
